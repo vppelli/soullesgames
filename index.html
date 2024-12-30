@@ -7,42 +7,56 @@
     <title>Soul Les Games</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="./css/styles.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:wght@300;400;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./css/styles.mini.css">
 </head>
 
 <body>
     <div class="mainnavigation">
-        <nav role="navigation" aria-label="Main">
+        <nav id="mainnav" class="topnav" role="navigation" aria-label="Main">
             <a class="logo" href="soullesgames.com" alt="soul les games logo"><img src="./img/Soullesgameslogo.svg"></a>
             <a href="#">Lanterns Labyrinth</a>
             <a href="#">Careers</a>
             <a href="#">About</a>
+            <a class="icon" href="javascript:void(0);" onclick="myFunction()"><img src="./img/hamburgernav.svg"></a>
+            <ul id="smallnav" class="hidden">
+                <li>
+                    <a href="#">Lanterns Labyrinth</a>
+                </li>
+                <li>
+                    <a href="#">Careers</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+            </ul>
         </nav>
     </div>
     <main>
         <article>
             <img class="backdrop" src="./img/Soullesgames_Ingame02.png">
             <header>
-                <img src="./img/Lanternslabyrinthlogo.svg">
+                <img class="gamename" src="./img/Lanternslabyrinthlogo.svg">
                 <div>
                     <a>Learn More</a>
                 </div>
-            </header>    
+            </header>
         </article>
         <article>
             <img class="backdrop" src="./img/Soullesgames_Ingame04.png">
             <header>
-                <img src="./img/Soullesavatar.svg" style="height: 300px;">
+                <img class="avatar" src="./img/Soullesavatar.svg">
                 <div>
                     <a>Careers Page</a>
                     <a class="alt">About Us</a>
                 </div>
-            </header>    
+            </header>
         </article>
     </main>
     <footer>
-        <nav role="Socials" aria-label="Soul Les Games">
+        <nav class="footerlinks" role="Socials" aria-label="Soul Les Games">
             <a href="https://x.com/SoulLesGamesLLC" alt="Twitter Social link">Twitter</a>
             <a href="https://www.youtube.com/@SoulLesGames" alt="YouTube Social link">YouTube</a>
             <a href="#" alt="Linkedin Social link">Linkedin</a>
@@ -50,17 +64,36 @@
             <a href="#" alt="TikTok Social link">TikTok</a>
             <a href="#" alt="Instagram Social link">Instagram</a>
         </nav>
-        <nav role="navigation" aria-label="Footer">
+        <nav class="footerlinks" role="navigation" aria-label="Footer">
             <a href="#">Lanterns Labyrinth</a>
             <a href="#">Careers</a>
             <a href="#">About</a>
         </nav>
         <nav role="redirect" aria-label="Soul Les Games Logo">
-            <a class="logo" href="soullesgames.com" alt="soul les games logo"><img src="./img/Soullesgameslogo.svg" style="height: 150px;"></a>
+            <a class="logo" href="soullesgames.com" alt="soul les games logo"><img src="./img/Soullesgameslogo.svg"></a>
         </nav>
         <p>2024 Soul Les Games, LLC. All rights reserved.</p>
     </footer>
 
+    <script>
+        const smallnav = document.getElementById("smallnav");
+        let showsmallnav = () => {
+            smallnav.classList.add("show");
+        }
+        let hidesmallnav = () => {
+            smallnav.classList.remove("show");
+        }
+        function myFunction() {
+            var x = document.getElementById("mainnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+                showsmallnav();
+            } else {
+                x.className = "topnav";
+                hidesmallnav();
+            }
+        }
+    </script>
 </body>
 
 </html>
