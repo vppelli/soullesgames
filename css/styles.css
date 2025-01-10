@@ -33,6 +33,7 @@ a {
     width: 150px;
     height: fit-content;
     text-align: center;
+    text-decoration: none;
 }
 
 ul {
